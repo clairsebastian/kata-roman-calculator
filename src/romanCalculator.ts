@@ -4,7 +4,6 @@ export class RomanCalculator{
         if (!RomanCalculator.isValid(numeralOne) || !RomanCalculator.isValid(numeralTwo)){
             return "INVALID INPUT"
         }
-
         return numeralOne + numeralTwo;
     }
     static isValid(numeral:string):boolean{
@@ -13,7 +12,6 @@ export class RomanCalculator{
             if (numeralsRuleMap.has(numeral[index])) {
                 const allowedRepetitions = numeralsRuleMap.get(numeral[index])?.allowedRepetitions as number;
                 const invalidRepetition = numeral[index].repeat(allowedRepetitions + 1)
-                console.log(`${numeral[index]} is allowed ${allowedRepetitions} times. invalidRepetition = ${invalidRepetition}`);
                 if (numeral.includes(invalidRepetition)) {
                     return false;
                 }
